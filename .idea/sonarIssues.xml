@@ -3,17 +3,7 @@
   <component name="issues">
     <option name="index">
       <map>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/a694062/android_petshop/MainActivity.java">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/../pet-shop/app/src/main/java/com/worldline/template/model/FilmModel.java">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/../reina_sofia_activos/app/src/androidTest/java/com/worldline/reina_sofia_activos/ExampleInstrumentedTest.kt">
+        <entry key="/Dummy.txt">
           <value>
             <set />
           </value>
