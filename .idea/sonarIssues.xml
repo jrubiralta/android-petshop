@@ -53,6 +53,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/domain/src/main/java/com/example/domain/executor/Executor.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/domain/src/main/java/com/example/domain/interactor/CompletableInteractor.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/domain/src/main/java/com/example/domain/interactor/FlowableInteractor.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/domain/src/main/java/com/example/domain/interactor/Interactor.kt">
           <value>
             <set />
