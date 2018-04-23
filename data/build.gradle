@@ -41,10 +41,6 @@ dependencies {
     implementation dataDependencies.rxJava
     implementation dataDependencies.rxJavaCallAdapter
 
-    implementation dataDependencies.room
-    implementation dataDependencies.roomRx
-    kapt dataDependencies.roomProcessor
-
     testImplementation dataTestDependencies.jUnit
     testImplementation dataTestDependencies.mockito
 

@@ -1,4 +1,4 @@
-package com.example.a694062.android_petshop;
+package com.example.jordi.android_petshop;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

@@ -44,9 +44,6 @@ dependencies {
     implementation appDependencies.rxAndroid
     testImplementation appTestDependencies.jUnit
     testImplementation appTestDependencies.mockito
-    implementation appDependencies.room
-    implementation appDependencies.roomRx
-    kapt appDependencies.roomProcessor
 
     androidTestImplementation appTestDependencies.mockitoAndroid
     androidTestImplementation appTestDependencies.espresso
@@ -57,5 +54,4 @@ dependencies {
 
     implementation project(':data')
     implementation project(':domain')
-    //implementation project(':com.symbol.emdk')
 }

@@ -62,9 +62,6 @@ ext {
             kodeinAndroid   : "com.github.salomonbrys.kodein:kodein-android:${kodeinVersion}",
             rxJava          : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
             rxAndroid       : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
-            room            : "android.arch.persistence.room:runtime:${componentsVersion}",
-            roomProcessor   : "android.arch.persistence.room:compiler:${componentsVersion}",
-            roomRx          : "android.arch.persistence.room:rxjava2:${componentsVersion}",
             progress        : "com.white:progressview:${progressVersion}",
             glide           : "com.github.bumptech.glide:glide:${glideVersion}",
             expandableLayout: "com.github.aakira:expandable-layout:${expandableLayoutVersion}@aar",
@@ -93,11 +90,7 @@ ext {
             okthttp            : "com.squareup.okhttp3:okhttp:${okthttpVersion}",
             logging_interceptor: "com.squareup.okhttp3:logging-interceptor:${okthttpVersion}",
             rxJava             : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
-            rxAndroid          : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
             rxJavaCallAdapter  : "com.squareup.retrofit2:adapter-rxjava2:${rxJavaCallAdapterVersion}",
-            room               : "android.arch.persistence.room:runtime:${componentsVersion}",
-            roomProcessor      : "android.arch.persistence.room:compiler:${componentsVersion}",
-            roomRx             : "android.arch.persistence.room:rxjava2:${componentsVersion}"
     ]
 
     dataTestDependencies = [
