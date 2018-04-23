@@ -1,16 +1,16 @@
-package com.example.a694062.android_petshop.presenter
+package com.example.jordi.android_petshop.presenter
 
 
 import com.crashlytics.android.Crashlytics
-import com.example.a694062.android_petshop.exception.ErrorHandler
-import com.example.a694062.android_petshop.exception.NonFatalException
+import com.example.jordi.android_petshop.exception.ErrorHandler
+import com.example.jordi.android_petshop.exception.NonFatalException
 import java.lang.Exception
 
 /**
  * Presenter.
  */
 abstract class Presenter<out V : Presenter.View>(protected val errorHandler: ErrorHandler,
-                                                 val view: V) {
+                                                                                             val view: V) {
 
     abstract fun initialize()
 

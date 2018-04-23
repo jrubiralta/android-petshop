@@ -1,4 +1,4 @@
-package com.example.a694062.android_petshop.view
+package com.example.jordi.android_petshop.view
 
 import android.app.Application
 import com.crashlytics.android.Crashlytics

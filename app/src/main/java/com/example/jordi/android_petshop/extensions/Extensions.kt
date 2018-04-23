@@ -1,4 +1,4 @@
-package com.example.a694062.android_petshop.extensions
+package com.example.jordi.android_petshop.extensions
 
 import android.content.Context
 import android.os.Build

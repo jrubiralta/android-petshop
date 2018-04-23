@@ -1,4 +1,4 @@
-package com.example.a694062.android_petshop.exception
+package com.example.jordi.android_petshop.exception
 
 /**
  * ErrorHandler.
