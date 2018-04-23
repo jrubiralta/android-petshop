@@ -8,6 +8,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/config/buildsystem/dependencies.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/domain/src/main/java/com/example/domain/interactor/Interactor.kt">
           <value>
             <set />
