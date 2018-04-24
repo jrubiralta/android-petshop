@@ -1,3 +1,3 @@
 package com.example.data.model.dto
 
-data class GenreResponseDto(val genres: List<GenreDto>)
+data class GenreResponseDto(var genres: List<GenreDto>)
