@@ -3,52 +3,22 @@
   <component name="issues">
     <option name="index">
       <map>
-        <entry key="/Dummy.txt">
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/mapper/GenreListViewMapper.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/data/src/main/java/com/example/data/api/MoviesListApiService.kt">
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/mapper/GenreViewMapper.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/data/src/main/java/com/example/data/mapper/dto/GenreDtoMapper.kt">
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/model/GenreListView.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/data/src/main/java/com/example/data/mapper/dto/GenreResponseDtoMapper.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/data/src/main/java/com/example/data/model/dto/GenreDto.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/data/src/main/java/com/example/data/model/dto/GenreResponseDto.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/domain/src/main/java/com/example/domain/model/Genre.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/domain/src/main/java/com/example/domain/model/GenreList.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/../reina_sofia_activos/data/src/main/java/com/worldline/data/api/DebugStaticApiService.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/../reina_sofia_activos/data/src/main/java/com/worldline/data/mapper/dto/LocationDtoMapper.kt">
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/model/GenreView.kt">
           <value>
             <set />
           </value>
