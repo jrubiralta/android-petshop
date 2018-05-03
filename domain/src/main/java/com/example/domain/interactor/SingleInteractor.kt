@@ -1,6 +1,7 @@
 package com.example.domain.interactor
 
 import com.example.domain.executor.Executor
+import com.example.domain.model.GenreList
 import io.reactivex.Single
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
