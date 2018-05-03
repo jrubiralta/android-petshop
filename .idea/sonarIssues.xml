@@ -3,77 +3,62 @@
   <component name="issues">
     <option name="index">
       <map>
-        <entry key="/Dummy.txt">
+        <entry key="$PROJECT_DIR$/data/src/main/java/com/example/data/api/GenreListApiService.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+        <entry key="$PROJECT_DIR$/data/src/main/java/com/example/data/datasource/network/GenreNetwork.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/mapper/GenreListViewMapper.kt">
+        <entry key="$PROJECT_DIR$/data/src/main/java/com/example/data/datasource/network/MovieNetwork.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/mapper/GenreViewMapper.kt">
+        <entry key="$PROJECT_DIR$/data/src/main/java/com/example/data/datasource/network/NetworkDataSource.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/model/GenreListView.kt">
+        <entry key="$PROJECT_DIR$/data/src/main/java/com/example/data/repository/GenreRepository.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/model/GenreView.kt">
+        <entry key="$PROJECT_DIR$/data/src/main/java/com/example/data/repository/MovieRepository.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/presenter/genre/GenreListPresenter.kt">
+        <entry key="$PROJECT_DIR$/domain/src/main/java/com/example/domain/interactor/SingleInteractor.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/view/adapter/GenreAdapter.kt">
+        <entry key="$PROJECT_DIR$/domain/src/main/java/com/example/domain/interactor/usecases/GetGenreUseCase.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/view/fragment/RootFragment.kt">
+        <entry key="$PROJECT_DIR$/domain/src/main/java/com/example/domain/repository/Repository.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/view/fragment/genre/GenreListFragment.kt">
+        <entry key="$PROJECT_DIR$/../reina_sofia_activos/data/src/main/java/com/worldline/data/datasource/network/DebugStaticNetworkDataSource.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layout/fragment_list_genre.xml">
+        <entry key="$PROJECT_DIR$/../reina_sofia_activos/domain/src/main/java/com/worldline/domain/interactor/usecases/detail/GetArtWorkByIdUseCase.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layout/item_genre.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/data/src/main/AndroidManifest.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/../reina_sofia_activos/app/src/main/java/com/worldline/reinasofiaactivos/view/adapter/ArtWorkAdapter.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/../reina_sofia_activos/app/src/main/res/layout/fragment_list_artwork.xml">
+        <entry key="$PROJECT_DIR$/../reina_sofia_activos/domain/src/main/java/com/worldline/domain/repository/Repository.kt">
           <value>
             <set />
           </value>

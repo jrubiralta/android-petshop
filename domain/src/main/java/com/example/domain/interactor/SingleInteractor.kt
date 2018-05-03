@@ -13,6 +13,7 @@ abstract class SingleInteractor<T: Any>(private val executor: Executor,
 
     fun execute(onSuccess: (T) -> Unit,
                 onError: (Throwable) -> Unit): Single<T> {
+
         val single = buildSingle()
                 .subscribeOn(executor.new())
                 .observeOn(executor.main())
