@@ -7,7 +7,7 @@ import com.example.domain.model.GenreList
 import com.example.domain.repository.GenreRepository
 import io.reactivex.Single
 
-class GetGenreUseCase(private val genreRepository: GenreRepository,
+class GetGenreUseCase(val genreRepository: GenreRepository,
                       executor: Executor)
     : SingleInteractor<GenreList>(executor = executor) {
 
