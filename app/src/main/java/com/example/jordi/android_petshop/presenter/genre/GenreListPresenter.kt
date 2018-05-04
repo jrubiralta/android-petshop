@@ -1,6 +1,5 @@
 package com.example.jordi.android_petshop.presenter.genre
 
-import android.text.GetChars
 import com.example.domain.interactor.usecases.GetGenreUseCase
 import com.example.jordi.android_petshop.exception.ErrorHandler
 import com.example.domain.model.GenreList

@@ -11,6 +11,10 @@ import kotlinx.android.synthetic.main.item_genre.view.*
 class GenreAdapter(var items: List<GenreView> = listOf())
     : RecyclerView.Adapter<GenreAdapter.GenreViewHolder>() {
 
+    fun addAll(genreListView: List<GenreView>) {
+        this.items = genreListView
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): GenreViewHolder {
         val view = LayoutInflater.from(parent?.context).inflate(R.layout.item_genre, parent, false)
         return GenreViewHolder(view)
