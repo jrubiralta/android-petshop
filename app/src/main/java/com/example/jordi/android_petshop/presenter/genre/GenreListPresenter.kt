@@ -19,15 +19,16 @@ class GenreListPresenter(private val getGenreUseCase: GetGenreUseCase,
     }
 
     override fun resume() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
     override fun stop() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
+        getGenreUseCase.clear()
     }
 
     override fun destroy() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
     private fun showGenreList(genreList: GenreList) {

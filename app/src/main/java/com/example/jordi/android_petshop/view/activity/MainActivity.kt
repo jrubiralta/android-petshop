@@ -11,6 +11,7 @@ import com.example.jordi.android_petshop.R
 import com.example.jordi.android_petshop.model.GenreListView
 import com.example.jordi.android_petshop.presenter.genre.GenreListPresenter
 import com.example.jordi.android_petshop.view.adapter.GenreAdapter
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : RootActivity<GenreListPresenter.View>(), GenreListPresenter.View {
@@ -30,8 +31,6 @@ class MainActivity : RootActivity<GenreListPresenter.View>(), GenreListPresenter
 
     override val layoutResourceId: Int = R.layout.activity_main
 
-    val genreList: RecyclerView by lazy { genreList }
-
     override fun showProgress() {
         //throw RuntimeException(getString(R.string.progress_no_available))
     }
@@ -41,8 +40,8 @@ class MainActivity : RootActivity<GenreListPresenter.View>(), GenreListPresenter
     }
 
     override fun initializeUI() {
-        genreList.adapter = genreListAdapter
-        genreList.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        genres.adapter = genreListAdapter
+        genres.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
     }
 
     override fun registerListeners() {
@@ -56,3 +55,4 @@ class MainActivity : RootActivity<GenreListPresenter.View>(), GenreListPresenter
         genreListAdapter.addAll(genreList.genresList)
     }
 }
+
