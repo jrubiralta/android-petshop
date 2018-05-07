@@ -28,7 +28,7 @@ class MainActivity : RootActivity<GenreListPresenter.View>(), GenreListPresenter
 
     private val genreListAdapter = GenreAdapter()
 
-    override val layoutResourceId: Int = R.layout.list_genre
+    override val layoutResourceId: Int = R.layout.activity_main
 
     val genreList: RecyclerView by lazy { genreList }
 
