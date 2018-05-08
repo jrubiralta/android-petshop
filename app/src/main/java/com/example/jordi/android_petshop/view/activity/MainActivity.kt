@@ -2,6 +2,7 @@ package com.example.jordi.android_petshop.view.activity
 
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import com.example.domain.model.GenreList
 import com.github.salomonbrys.kodein.Kodein
 import com.github.salomonbrys.kodein.bind
@@ -53,6 +54,7 @@ class MainActivity : RootActivity<GenreListPresenter.View>(), GenreListPresenter
 
     override fun showGenreList(genreList: GenreListView) {
         genreListAdapter.addAll(genreList.genresList)
+        genres.adapter = genreListAdapter
     }
 }
 

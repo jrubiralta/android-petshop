@@ -1,5 +1,6 @@
 package com.example.jordi.android_petshop.presenter.genre
 
+import android.util.Log
 import com.example.domain.interactor.usecases.GetGenreUseCase
 import com.example.jordi.android_petshop.exception.ErrorHandler
 import com.example.domain.model.GenreList
@@ -14,6 +15,7 @@ class GenreListPresenter(private val getGenreUseCase: GetGenreUseCase,
     : Presenter<GenreListPresenter.View>(errorHandler, view) {
 
     override fun initialize() {
+
         getGenreUseCase.execute(onSuccess = { genreList ->  showGenreList(genreList) },
                 onError = { showError(it as  Exception) })
     }
@@ -23,7 +25,6 @@ class GenreListPresenter(private val getGenreUseCase: GetGenreUseCase,
     }
 
     override fun stop() {
-
         getGenreUseCase.clear()
     }
 
