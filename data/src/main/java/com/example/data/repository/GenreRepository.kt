@@ -1,7 +1,6 @@
 package com.example.data.repository
 
 import com.example.data.datasource.network.NetworkDataSource
-import com.example.domain.model.Genre
 import com.example.domain.model.GenreList
 import com.example.domain.repository.GenreRepository
 import io.reactivex.Single
