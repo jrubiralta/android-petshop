@@ -19,6 +19,7 @@ fun FilmDto.toModel(): Film =
                 vote_average = vote_average,
                 vote_count = vote_count)
 
+
 fun Film.toData(): FilmDto =
         FilmDto(adult = adult,
                 backdrop_path = backdrop_path,
