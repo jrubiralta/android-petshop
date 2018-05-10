@@ -103,6 +103,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/domain/src/main/java/com/example/domain/interactor/usecases/GetFilmsUseCase.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/domain/src/main/java/com/example/domain/model/Film.kt">
           <value>
             <set />
