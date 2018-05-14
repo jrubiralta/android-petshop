@@ -6,6 +6,7 @@ import com.example.jordi.android_petshop.exception.ErrorHandler
 import com.example.domain.model.GenreList
 import com.example.jordi.android_petshop.mapper.toView
 import com.example.jordi.android_petshop.model.GenreListView
+import com.example.jordi.android_petshop.model.GenreView
 import com.example.jordi.android_petshop.presenter.Presenter
 
 
@@ -43,7 +44,12 @@ class GenreListPresenter(private val getGenreUseCase: GetGenreUseCase,
         }
     }
 
+    fun onGenreClicked(genreView: GenreView) {
+        view.navigateToFilmsList(genreView.id)
+    }
+
     interface View: Presenter.View {
         fun showGenreList(genreListView: GenreListView)
+        fun navigateToFilmsList(genreId: Int)
     }
 }

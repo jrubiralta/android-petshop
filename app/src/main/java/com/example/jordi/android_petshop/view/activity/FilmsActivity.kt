@@ -7,30 +7,36 @@ import com.github.salomonbrys.kodein.bind
 import com.github.salomonbrys.kodein.instance
 import com.github.salomonbrys.kodein.provider
 import com.example.jordi.android_petshop.R
+import com.example.jordi.android_petshop.model.FilmView
 import com.example.jordi.android_petshop.model.GenreListView
+import com.example.jordi.android_petshop.presenter.Presenter
+import com.example.jordi.android_petshop.presenter.films.FilmsListPresenter
 import com.example.jordi.android_petshop.presenter.genre.GenreListPresenter
+import com.example.jordi.android_petshop.view.adapter.FilmAdapter
 import com.example.jordi.android_petshop.view.adapter.GenreAdapter
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.list_films.*
 
 
-class MainActivity : RootActivity<GenreListPresenter.View>(), GenreListPresenter.View {
+class FilmsActivity : RootActivity<FilmsListPresenter.View>(), FilmsListPresenter.View {
 
     override val activityModule: Kodein.Module = Kodein.Module {
-        bind<GenreListPresenter>() with provider {
-            GenreListPresenter(
-                    getGenreUseCase = instance(),
+        bind<FilmsListPresenter>() with provider {
+            FilmsListPresenter(
+                    genreId = getIntent().getExtras().getInt("genreId").toString(),
+                    getFilmsUseCase = instance(),
                     errorHandler = instance(),
-                    view = this@MainActivity)
+                    view = this@FilmsActivity)
         }
     }
 
-    override val presenter: GenreListPresenter by instance()
+    // var genreId: String = getIntent().getExtras().getInt("genreId").toString()
 
-    private val genreListAdapter = GenreAdapter(
-            onItemClick = { presenter.onGenreClicked(it) }
-    )
+    override val presenter: FilmsListPresenter by instance()
 
-    override val layoutResourceId: Int = R.layout.activity_main
+    private val filmListAdapter = FilmAdapter()
+
+    override val layoutResourceId: Int = R.layout.list_films
 
     override fun showProgress() {
         //throw RuntimeException(getString(R.string.progress_no_available))
@@ -41,32 +47,19 @@ class MainActivity : RootActivity<GenreListPresenter.View>(), GenreListPresenter
     }
 
     override fun initializeUI() {
-        genres.adapter = genreListAdapter
+        genres.adapter = filmListAdapter
         genres.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
     }
 
     override fun registerListeners() {
-        genres.setOnClickListener {  }
     }
 
     override fun onDestroy() {
         super.onDestroy()
     }
 
-    override fun showGenreList(genreList: GenreListView) {
-        genreListAdapter.addAll(genreList.genresList)
-        genres.adapter = genreListAdapter
-    }
-
-
-    override fun navigateToFilmsList(genreId: Int) {
-        navigateToFilmsList(this, genreId)
-    }
-
-    fun navigateToFilmsList(context: RootActivity<*>, genreId: Int) {
-        val intent = Intent(context, FilmsActivity::class.java)
-        intent.putExtra("genreId", genreId)
-        context.startActivity(intent)
+    override fun showFilmList(filmsList: List<FilmView>) {
+        genres.adapter = filmListAdapter
     }
 }
 

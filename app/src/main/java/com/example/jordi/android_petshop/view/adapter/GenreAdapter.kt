@@ -8,7 +8,8 @@ import com.example.jordi.android_petshop.R
 import com.example.jordi.android_petshop.model.GenreView
 import kotlinx.android.synthetic.main.item_genre.view.*
 
-class GenreAdapter(var items: List<GenreView> = listOf())
+class GenreAdapter(var items: List<GenreView> = listOf(),
+                   val onItemClick: (GenreView) -> Unit)
     : RecyclerView.Adapter<GenreAdapter.GenreViewHolder>() {
 
     fun addAll(genreListView: List<GenreView>) {
@@ -17,7 +18,8 @@ class GenreAdapter(var items: List<GenreView> = listOf())
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): GenreViewHolder {
         val view = LayoutInflater.from(parent?.context).inflate(R.layout.item_genre, parent, false)
-        return GenreViewHolder(view)
+        return GenreViewHolder(view,
+                onItemClick = { onItemClick(items[it]) })
     }
 
     override fun onBindViewHolder(holder: GenreViewHolder?, position: Int) {
@@ -26,12 +28,19 @@ class GenreAdapter(var items: List<GenreView> = listOf())
 
     override fun getItemCount(): Int = items.size
 
-    class GenreViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class GenreViewHolder(itemView: View,
+                          private val onItemClick: (Int) -> Unit) : RecyclerView.ViewHolder(itemView) {
+
+
+        init {
+            itemView.setOnClickListener { onItemClick(adapterPosition) }
+        }
 
         fun bind(genreView: GenreView) {
             itemView.idGenre.text = genreView.id.toString()
             itemView.name.text = genreView.name
         }
+
     }
 
 }
