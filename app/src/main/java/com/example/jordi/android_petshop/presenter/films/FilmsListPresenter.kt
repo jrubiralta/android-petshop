@@ -7,14 +7,16 @@ import com.example.jordi.android_petshop.mapper.toView
 import com.example.jordi.android_petshop.model.FilmView
 import com.example.jordi.android_petshop.presenter.Presenter
 
-class FilmsListPresenter(val genreId: String,
-                         private val getFilmsUseCase: GetFilmsUseCase,
+class FilmsListPresenter(private val getFilmsUseCase: GetFilmsUseCase,
                          errorHandler: ErrorHandler,
                          view: FilmsListPresenter.View)
     : Presenter<FilmsListPresenter.View>(errorHandler, view) {
 
+
+
     override fun initialize() {
-        getFilmsUseCase.execute(genreId = genreId, onSuccess = { genreList ->  showFilmList(genreList) },
+        val genereId: Int = view.getGenreId()
+        getFilmsUseCase.execute(genreId = genereId, onSuccess = { filmsList ->  showFilmList(filmsList) },
                 onError = { showError(it as  Exception) })
     }
 
@@ -43,6 +45,7 @@ class FilmsListPresenter(val genreId: String,
 
     interface View: Presenter.View {
         fun showFilmList(filmsList: List<FilmView>)
+        fun getGenreId(): Int
     }
 
 }

@@ -1,36 +1,29 @@
 package com.example.jordi.android_petshop.view.activity
 
 import android.content.Intent
+import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import com.github.salomonbrys.kodein.Kodein
 import com.github.salomonbrys.kodein.bind
 import com.github.salomonbrys.kodein.instance
 import com.github.salomonbrys.kodein.provider
 import com.example.jordi.android_petshop.R
 import com.example.jordi.android_petshop.model.FilmView
-import com.example.jordi.android_petshop.model.GenreListView
-import com.example.jordi.android_petshop.presenter.Presenter
 import com.example.jordi.android_petshop.presenter.films.FilmsListPresenter
-import com.example.jordi.android_petshop.presenter.genre.GenreListPresenter
 import com.example.jordi.android_petshop.view.adapter.FilmAdapter
-import com.example.jordi.android_petshop.view.adapter.GenreAdapter
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.list_films.*
-
 
 class FilmsActivity : RootActivity<FilmsListPresenter.View>(), FilmsListPresenter.View {
 
     override val activityModule: Kodein.Module = Kodein.Module {
         bind<FilmsListPresenter>() with provider {
             FilmsListPresenter(
-                    genreId = getIntent().getExtras().getInt("genreId").toString(),
                     getFilmsUseCase = instance(),
                     errorHandler = instance(),
                     view = this@FilmsActivity)
         }
     }
-
-    // var genreId: String = getIntent().getExtras().getInt("genreId").toString()
 
     override val presenter: FilmsListPresenter by instance()
 
@@ -47,11 +40,12 @@ class FilmsActivity : RootActivity<FilmsListPresenter.View>(), FilmsListPresente
     }
 
     override fun initializeUI() {
-        genres.adapter = filmListAdapter
-        genres.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        films.adapter = filmListAdapter
+        films.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
     }
 
     override fun registerListeners() {
+
     }
 
     override fun onDestroy() {
@@ -59,7 +53,14 @@ class FilmsActivity : RootActivity<FilmsListPresenter.View>(), FilmsListPresente
     }
 
     override fun showFilmList(filmsList: List<FilmView>) {
-        genres.adapter = filmListAdapter
+        filmListAdapter.addAll(filmsList)
+        films.adapter = filmListAdapter
+    }
+
+    override fun getGenreId(): Int {
+        val i: Bundle = getIntent().extras
+        val genereId: Int = i.getInt("genreId")
+        return genereId
     }
 }
 

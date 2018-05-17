@@ -10,9 +10,9 @@ class GetFilmsUseCase(val filmsRepository: FilmRepository,
                       executor: Executor)
     : SingleInteractor<List<Film>>(executor = executor) {
 
-    private var genreId: String = ""
+    private var genreId: Int = 0
 
-    fun execute(genreId: String,
+    fun execute(genreId: Int,
                          onSuccess: (List<Film>) -> Unit,
                          onError: (Throwable) -> Unit) {
 

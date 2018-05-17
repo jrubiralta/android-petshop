@@ -11,7 +11,7 @@ class NetworkDataSource (val apiService: GenreListApiService) {
     fun getGenreList(api_key: String, language: String): Single<GenreList> = apiService.getGenreList(api_key, language)
             .map { it.toModel() }
 
-    fun getGenreFilms(genre_id: String, api_key: String, language: String, include_adult: String, sort_by: String): Single<List<Film>> =
+    fun getGenreFilms(genre_id: Int, api_key: String, language: String, include_adult: String, sort_by: String): Single<List<Film>> =
             apiService.getGenreFilms(genre_id, api_key, language, include_adult, sort_by)
                     .map {
                         it.map { it.toModel() }

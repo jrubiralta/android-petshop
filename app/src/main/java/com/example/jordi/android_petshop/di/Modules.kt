@@ -42,9 +42,9 @@ val dataModule = Kodein.Module {
     }
 
     /* DATA SOURCES */
-    bind() from singleton { NetworkDataSource(instance()) }
+    bind() from singleton { NetworkDataSource(apiService = instance()) }
 
     /* REPOSITORY */
     bind<GenreRepository>() with singleton { com.example.data.repository.GenreRepository(network = instance()) }
-    bind<FilmRepository>() with singleton { com.example.data.repository.FilmRepository(genre_id = instance(), network = instance()) }
+    bind<FilmRepository>() with singleton { com.example.data.repository.FilmRepository(network = instance()) }
 }

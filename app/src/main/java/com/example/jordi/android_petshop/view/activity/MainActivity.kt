@@ -46,7 +46,7 @@ class MainActivity : RootActivity<GenreListPresenter.View>(), GenreListPresenter
     }
 
     override fun registerListeners() {
-        genres.setOnClickListener {  }
+        //genres.setOnClickListener {  }
     }
 
     override fun onDestroy() {
@@ -58,15 +58,10 @@ class MainActivity : RootActivity<GenreListPresenter.View>(), GenreListPresenter
         genres.adapter = genreListAdapter
     }
 
-
     override fun navigateToFilmsList(genreId: Int) {
-        navigateToFilmsList(this, genreId)
-    }
-
-    fun navigateToFilmsList(context: RootActivity<*>, genreId: Int) {
-        val intent = Intent(context, FilmsActivity::class.java)
+        val intent = Intent(this, FilmsActivity::class.java)
         intent.putExtra("genreId", genreId)
-        context.startActivity(intent)
+        startActivity(intent)
     }
 }
 
