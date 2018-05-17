@@ -8,6 +8,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/mapper/FilmRequestView.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/model/FilmRequestView.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/model/FilmView.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/presenter/films/FilmsListPresenter.kt">
           <value>
             <set />
@@ -33,6 +48,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/data/src/main/java/com/example/data/mapper/dto/FilmRequestDto.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/data/src/main/java/com/example/data/model/dto/FilmDto.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/data/src/main/java/com/example/data/model/dto/FilmRequestDto.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/data/src/main/java/com/example/data/repository/FilmRepository.kt">
           <value>
             <set />
@@ -44,6 +74,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/domain/src/main/java/com/example/domain/interactor/usecases/GetFilmsUseCase.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/domain/src/main/java/com/example/domain/model/Film.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/domain/src/main/java/com/example/domain/model/FilmRequest.kt">
           <value>
             <set />
           </value>

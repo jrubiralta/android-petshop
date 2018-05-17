@@ -17,7 +17,7 @@ interface GenreListApiService {
 
     @GET("genre/{genre_id}/movies")
     fun getGenreFilms(@Path("genre_id") id: Int, @Query("api_key") key: String, @Query("language") language: String,
-                      @Query("include_adult") adult: String, @Query("sort_by") sort_by: String): Single<List<FilmDto>>
+                      @Query("include_adult") adult: String, @Query("sort_by") sort_by: String): Single<FilmRequestDto>
 
 }
 
