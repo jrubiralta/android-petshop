@@ -9,8 +9,7 @@ import java.lang.Exception
 /**
  * Presenter.
  */
-abstract class Presenter<out V : Presenter.View>(protected val errorHandler: ErrorHandler,
-                                                                                             val view: V) {
+abstract class Presenter<out V : Presenter.View>(protected val errorHandler: ErrorHandler, val view: V) {
 
     abstract fun initialize()
 

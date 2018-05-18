@@ -7,13 +7,11 @@ import com.github.salomonbrys.kodein.instance
 import com.github.salomonbrys.kodein.singleton
 import com.example.data.api.*
 
-import com.example.data.datasource.network.GenreNetwork
 import com.example.data.datasource.network.NetworkDataSource
-import com.example.data.repository.*
 import com.example.domain.executor.Executor
+import com.example.domain.interactor.usecases.GetFilmsUseCase
 import com.example.domain.interactor.usecases.GetGenreUseCase
-import com.example.domain.model.GenreList
-import com.example.domain.repository.*
+import com.example.domain.repository.FilmRepository
 import com.example.domain.repository.GenreRepository
 import com.example.jordi.android_petshop.exception.ErrorHandler
 import com.example.jordi.android_petshop.exception.ErrorHandlerImpl
@@ -32,6 +30,7 @@ fun appModule(context: Context) = Kodein.Module {
 
 val domainModule = Kodein.Module {
     bind() from singleton { GetGenreUseCase(genreRepository = instance(), executor = instance()) }
+    bind() from singleton { GetFilmsUseCase(filmsRepository = instance(), executor = instance()) }
 }
 
 val dataModule = Kodein.Module {
@@ -43,10 +42,9 @@ val dataModule = Kodein.Module {
     }
 
     /* DATA SOURCES */
-    bind<NetworkDataSource>() with singleton {
-        GenreNetwork(apiService = instance())
-    }
+    bind() from singleton { NetworkDataSource(apiService = instance()) }
 
     /* REPOSITORY */
     bind<GenreRepository>() with singleton { com.example.data.repository.GenreRepository(network = instance()) }
+    bind<FilmRepository>() with singleton { com.example.data.repository.FilmRepository(network = instance()) }
 }

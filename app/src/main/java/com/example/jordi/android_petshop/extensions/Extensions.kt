@@ -35,3 +35,12 @@ fun Context.toast(text: String, length: Int = Toast.LENGTH_LONG) {
 fun Context.toast(textId: Int, length: Int = Toast.LENGTH_LONG) {
     Toast.makeText(this, textId, length).show()
 }
+
+/**
+ * ImageView
+ * */
+fun ImageView.load(src: String) {
+    Glide.with(this.context)
+            .load(src)
+            .into(this)
+}

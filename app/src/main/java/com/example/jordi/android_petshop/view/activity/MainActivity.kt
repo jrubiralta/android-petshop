@@ -1,9 +1,7 @@
 package com.example.jordi.android_petshop.view.activity
 
+import android.content.Intent
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import android.util.Log
-import com.example.domain.model.GenreList
 import com.github.salomonbrys.kodein.Kodein
 import com.github.salomonbrys.kodein.bind
 import com.github.salomonbrys.kodein.instance
@@ -28,7 +26,9 @@ class MainActivity : RootActivity<GenreListPresenter.View>(), GenreListPresenter
 
     override val presenter: GenreListPresenter by instance()
 
-    private val genreListAdapter = GenreAdapter()
+    private val genreListAdapter = GenreAdapter(
+            onItemClick = { presenter.onGenreClicked(it) }
+    )
 
     override val layoutResourceId: Int = R.layout.activity_main
 
@@ -46,6 +46,7 @@ class MainActivity : RootActivity<GenreListPresenter.View>(), GenreListPresenter
     }
 
     override fun registerListeners() {
+        //genres.setOnClickListener {  }
     }
 
     override fun onDestroy() {
@@ -55,6 +56,12 @@ class MainActivity : RootActivity<GenreListPresenter.View>(), GenreListPresenter
     override fun showGenreList(genreList: GenreListView) {
         genreListAdapter.addAll(genreList.genresList)
         genres.adapter = genreListAdapter
+    }
+
+    override fun navigateToFilmsList(genreId: Int) {
+        val intent = Intent(this, FilmsActivity::class.java)
+        intent.putExtra("genreId", genreId)
+        startActivity(intent)
     }
 }
 
