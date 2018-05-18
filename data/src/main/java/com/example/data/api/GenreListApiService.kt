@@ -12,7 +12,7 @@ interface GenreListApiService {
         val ENDPOINT = "https://api.themoviedb.org/3/"
     }
 
-    @GET ("genre/movie/list")
+    @GET("genre/movie/list")
     fun getGenreList(@Query("api_key") key: String, @Query("language") language: String): Single<GenreResponseDto>
 
     @GET("genre/{genre_id}/movies")
@@ -20,4 +20,6 @@ interface GenreListApiService {
                       @Query("include_adult") adult: String, @Query("sort_by") sort_by: String): Single<FilmRequestDto>
 
 }
+
+
 

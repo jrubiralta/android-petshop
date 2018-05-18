@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.jordi.android_petshop.R
+import com.example.jordi.android_petshop.extensions.load
 import com.example.jordi.android_petshop.model.FilmView
 import kotlinx.android.synthetic.main.item_film.view.*
 
@@ -29,6 +30,7 @@ class FilmAdapter(var items: List<FilmView> = listOf())
     class FilmViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(filmView: FilmView) {
+            itemView.imageFilm.load(filmView.getImage())
             itemView.idFilm.text = filmView.id.toString()
             itemView.filmTitle.text = filmView.title
         }

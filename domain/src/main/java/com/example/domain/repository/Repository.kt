@@ -1,6 +1,5 @@
 package com.example.domain.repository
 
-import com.example.domain.model.Film
 import com.example.domain.model.FilmRequest
 import com.example.domain.model.GenreList
 import io.reactivex.*
@@ -15,4 +14,5 @@ interface FilmRepository {
                       language: String = "es-ES",
                       include_adult: String = "false",
                       sort_by: String = "created_at.asc"): Single<FilmRequest>
+
 }

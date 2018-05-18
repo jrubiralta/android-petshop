@@ -1,6 +1,7 @@
 package com.example.data.model.dto
 
-data class FilmDto(var adult: Boolean,
+data class FilmDto(var poster_path: String,
+                    var adult: Boolean,
                     var backdrop_path: String,
                     var genre_ids: List<Int>,
                     var id: Int,
