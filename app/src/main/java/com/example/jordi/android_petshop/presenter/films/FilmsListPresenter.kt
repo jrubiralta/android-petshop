@@ -43,9 +43,14 @@ class FilmsListPresenter(private val getFilmsUseCase: GetFilmsUseCase,
         }
     }
 
+    fun onFilmClicked(filmView: FilmView) {
+        view.navigateToFilmInfo(filmView)
+    }
+
     interface View: Presenter.View {
         fun showFilmList(filmsList: List<FilmView>)
         fun getGenreId(): Int
+        fun navigateToFilmInfo(filmView: FilmView)
     }
 
 }

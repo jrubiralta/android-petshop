@@ -3,7 +3,6 @@ package com.example.jordi.android_petshop.view.activity
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
-import android.util.Log
 import com.github.salomonbrys.kodein.Kodein
 import com.github.salomonbrys.kodein.bind
 import com.github.salomonbrys.kodein.instance
@@ -27,7 +26,9 @@ class FilmsActivity : RootActivity<FilmsListPresenter.View>(), FilmsListPresente
 
     override val presenter: FilmsListPresenter by instance()
 
-    private val filmListAdapter = FilmAdapter()
+    private val filmListAdapter = FilmAdapter(
+            onItemClick = { presenter.onFilmClicked(it)}
+    )
 
     override val layoutResourceId: Int = R.layout.list_films
 
@@ -58,9 +59,19 @@ class FilmsActivity : RootActivity<FilmsListPresenter.View>(), FilmsListPresente
     }
 
     override fun getGenreId(): Int {
-        val i: Bundle = getIntent().extras
+        val i: Bundle = intent.extras
         val genereId: Int = i.getInt("genreId")
         return genereId
+    }
+
+    override fun navigateToFilmInfo(filmView: FilmView) {
+        val intent = Intent(this, FilmInfoActivity::class.java)
+        intent.putExtra("overView", filmView.overview)
+        intent.putExtra("release_data", filmView.release_date)
+        intent.putExtra("vote_average", filmView.vote_average)
+        intent.putExtra("image_url", filmView.getImage())
+        intent.putExtra("title", filmView.title)
+        startActivity(intent)
     }
 }
 
