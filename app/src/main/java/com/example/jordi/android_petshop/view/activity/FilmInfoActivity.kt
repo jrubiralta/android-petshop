@@ -9,6 +9,7 @@ import com.example.jordi.android_petshop.R
 import com.example.jordi.android_petshop.extensions.load
 import com.example.jordi.android_petshop.presenter.films.FilmPresenter
 import kotlinx.android.synthetic.main.film_information.*
+import kotlinx.android.synthetic.main.view_progress.*
 
 
 class FilmInfoActivity : RootActivity<FilmPresenter.View>(), FilmPresenter.View {
@@ -28,26 +29,26 @@ class FilmInfoActivity : RootActivity<FilmPresenter.View>(), FilmPresenter.View 
     override val layoutResourceId: Int = R.layout.film_information
 
     override fun showProgress() {
-        //throw RuntimeException(getString(R.string.progress_no_available))
+        progress.show()
     }
 
     override fun hideProgress() {
-        //throw RuntimeException(getString(R.string.progress_no_available))
+        progress.hide()
     }
 
     override fun initializeUI() {
-
+        // nothing to do
     }
 
     override fun registerListeners() {
-
+        // nothing to do
     }
 
     override fun onDestroy() {
         super.onDestroy()
     }
 
-    fun getFilmInfo() {
+    override fun getFilmDetails() {
         val i: Bundle = intent.extras
         titleFilm.text = i.getString("title")
         date.text = i.getString("release_data")

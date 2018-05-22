@@ -8,12 +8,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/presenter/films/FilmPresenter.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/presenter/films/FilmsListPresenter.kt">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/presenter/genre/GenreListPresenter.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/view/activity/FilmInfoActivity.kt">
           <value>
             <set />
           </value>
@@ -34,6 +49,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/view/adapter/GenreAdapter.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/film_information.xml">
           <value>
             <set />
           </value>
@@ -74,6 +94,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../reina_sofia_activos/app/src/main/java/com/worldline/reinasofiaactivos/presenter/artwork/ArtWorkDetailPresenter.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../reina_sofia_activos/app/src/main/java/com/worldline/reinasofiaactivos/view/fragment/artwork/ArtWorkDetailFragment.kt">
           <value>
             <set />
           </value>

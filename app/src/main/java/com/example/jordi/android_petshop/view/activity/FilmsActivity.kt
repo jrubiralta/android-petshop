@@ -67,7 +67,7 @@ class FilmsActivity : RootActivity<FilmsListPresenter.View>(), FilmsListPresente
 
     override fun navigateToFilmInfo(filmView: FilmView) {
         val intent = Intent(this, FilmInfoActivity::class.java)
-        intent.putExtra("overView", filmView.overview)
+        intent.putExtra("overview", filmView.overview)
         intent.putExtra("release_data", filmView.release_date)
         intent.putExtra("vote_average", filmView.vote_average)
         intent.putExtra("image_url", filmView.getImage())

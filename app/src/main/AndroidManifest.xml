@@ -27,6 +27,12 @@
 
         </activity>
 
+        <activity
+            android:name=".view.activity.FilmInfoActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+
     </application>
 
 </manifest>

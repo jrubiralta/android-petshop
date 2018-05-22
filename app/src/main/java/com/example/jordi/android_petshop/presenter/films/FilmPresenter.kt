@@ -11,28 +11,27 @@ class FilmPresenter(errorHandler: ErrorHandler,
 
 
     override fun initialize() {
-
+        view.getFilmDetails()
     }
 
     override fun resume() {
-
+        // nothing to do
     }
 
     override fun stop() {
+        // nothing to do
     }
 
     override fun destroy() {
-
+        // nothing to do
     }
 
     private fun showError(exception: Exception) {
-        if (exception !is NoSuchElementException) {
-            view.showError(errorHandler.convert(exception))
-        }
+        onError { exception }
     }
 
     interface View: Presenter.View {
-
+        fun getFilmDetails()
     }
 
 }
