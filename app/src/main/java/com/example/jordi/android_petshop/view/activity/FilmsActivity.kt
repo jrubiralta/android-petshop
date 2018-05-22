@@ -3,6 +3,7 @@ package com.example.jordi.android_petshop.view.activity
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import com.example.data.constants.Constants
 import com.github.salomonbrys.kodein.Kodein
 import com.github.salomonbrys.kodein.bind
 import com.github.salomonbrys.kodein.instance
@@ -12,6 +13,7 @@ import com.example.jordi.android_petshop.model.FilmView
 import com.example.jordi.android_petshop.presenter.films.FilmsListPresenter
 import com.example.jordi.android_petshop.view.adapter.FilmAdapter
 import kotlinx.android.synthetic.main.list_films.*
+import kotlinx.android.synthetic.main.view_progress.*
 
 class FilmsActivity : RootActivity<FilmsListPresenter.View>(), FilmsListPresenter.View {
 
@@ -33,11 +35,11 @@ class FilmsActivity : RootActivity<FilmsListPresenter.View>(), FilmsListPresente
     override val layoutResourceId: Int = R.layout.list_films
 
     override fun showProgress() {
-        //throw RuntimeException(getString(R.string.progress_no_available))
+        progress.show()
     }
 
     override fun hideProgress() {
-        //throw RuntimeException(getString(R.string.progress_no_available))
+        progress.hide()
     }
 
     override fun initializeUI() {
@@ -46,7 +48,7 @@ class FilmsActivity : RootActivity<FilmsListPresenter.View>(), FilmsListPresente
     }
 
     override fun registerListeners() {
-
+        // nothing to do
     }
 
     override fun onDestroy() {
@@ -55,12 +57,11 @@ class FilmsActivity : RootActivity<FilmsListPresenter.View>(), FilmsListPresente
 
     override fun showFilmList(filmsList: List<FilmView>) {
         filmListAdapter.addAll(filmsList)
-        films.adapter = filmListAdapter
     }
 
     override fun getGenreId(): Int {
         val i: Bundle = intent.extras
-        val genereId: Int = i.getInt("genreId")
+        val genereId: Int = i.getInt(Constants.GENRE)
         return genereId
     }
 

@@ -8,67 +8,12 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/extensions/Extensions.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/mapper/FilmRequestView.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/mapper/FilmRequestViewMapper.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/mapper/FilmViewMapper.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/mapper/ImagesFilmRequestViewMapper.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/mapper/ImagesFilmViewMapper.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/model/FilmRequestView.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/model/FilmView.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/model/ImagesFilmRequestView.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/model/ImagesFilmsView.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/presenter/films/FilmPresenter.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/presenter/films/FilmsListPresenter.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/view/activity/FilmInfoActivity.kt">
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/presenter/genre/GenreListPresenter.kt">
           <value>
             <set />
           </value>
@@ -88,17 +33,17 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layout/film_information.xml">
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/view/adapter/GenreAdapter.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layout/item_film.xml">
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/view_progress.xml">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/data/src/main/java/com/example/data/api/GenreListApiService.kt">
+        <entry key="$PROJECT_DIR$/data/src/main/java/com/example/data/constants/Constants.kt">
           <value>
             <set />
           </value>
@@ -108,62 +53,12 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/data/src/main/java/com/example/data/mapper/dto/FilmDtoMapper.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/data/src/main/java/com/example/data/mapper/dto/FilmRequestDto.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/data/src/main/java/com/example/data/mapper/dto/FilmRequestDtoMapper.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/data/src/main/java/com/example/data/mapper/dto/ImagesFilmDtoMapper.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/data/src/main/java/com/example/data/mapper/dto/ImagesFilmRequestDtoMapper.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/data/src/main/java/com/example/data/model/dto/FilmDto.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/data/src/main/java/com/example/data/model/dto/FilmRequestDto.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/data/src/main/java/com/example/data/model/dto/ImageFilmRequestDto.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/data/src/main/java/com/example/data/model/dto/ImagesFilmDto.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/data/src/main/java/com/example/data/model/dto/ImagesFilmRequestDto.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
         <entry key="$PROJECT_DIR$/data/src/main/java/com/example/data/repository/FilmRepository.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/domain/src/main/java/com/example/domain/interactor/SingleInteractor.kt">
+        <entry key="$PROJECT_DIR$/data/src/main/java/com/example/data/repository/GenreRepository.kt">
           <value>
             <set />
           </value>
@@ -173,37 +68,17 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/domain/src/main/java/com/example/domain/model/Film.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/domain/src/main/java/com/example/domain/model/FilmRequest.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/domain/src/main/java/com/example/domain/model/ImagesFilm.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/domain/src/main/java/com/example/domain/model/ImagesFilmRequest.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
         <entry key="$PROJECT_DIR$/domain/src/main/java/com/example/domain/repository/Repository.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/../reina_sofia_activos/app/src/main/java/com/worldline/reinasofiaactivos/model/ArtWorkView.kt">
+        <entry key="$PROJECT_DIR$/../reina_sofia_activos/app/src/main/java/com/worldline/reinasofiaactivos/presenter/artwork/ArtWorkDetailPresenter.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/../reina_sofia_activos/app/src/main/java/com/worldline/reinasofiaactivos/view/adapter/ArtWorkAdapter.kt">
+        <entry key="$PROJECT_DIR$/../reina_sofia_activos/data/src/main/java/com/worldline/data/constants/Constants.kt">
           <value>
             <set />
           </value>

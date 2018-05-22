@@ -14,6 +14,7 @@ class GenreAdapter(var items: List<GenreView> = listOf(),
 
     fun addAll(genreListView: List<GenreView>) {
         this.items = genreListView
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): GenreViewHolder {

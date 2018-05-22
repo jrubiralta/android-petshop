@@ -13,8 +13,8 @@ class GetFilmsUseCase(val filmsRepository: FilmRepository,
     private var genreId: Int = 0
 
     fun execute(genreId: Int,
-                         onSuccess: (List<Film>) -> Unit,
-                         onError: (Throwable) -> Unit) {
+                onSuccess: (List<Film>) -> Unit,
+                onError: (Throwable) -> Unit) {
 
         this.genreId = genreId
         super.execute(onSuccess, onError)

@@ -2,6 +2,7 @@ package com.example.jordi.android_petshop.view.activity
 
 import android.content.Intent
 import android.support.v7.widget.LinearLayoutManager
+import com.example.data.constants.Constants
 import com.github.salomonbrys.kodein.Kodein
 import com.github.salomonbrys.kodein.bind
 import com.github.salomonbrys.kodein.instance
@@ -11,6 +12,7 @@ import com.example.jordi.android_petshop.model.GenreListView
 import com.example.jordi.android_petshop.presenter.genre.GenreListPresenter
 import com.example.jordi.android_petshop.view.adapter.GenreAdapter
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.view_progress.*
 
 
 class MainActivity : RootActivity<GenreListPresenter.View>(), GenreListPresenter.View {
@@ -33,11 +35,11 @@ class MainActivity : RootActivity<GenreListPresenter.View>(), GenreListPresenter
     override val layoutResourceId: Int = R.layout.activity_main
 
     override fun showProgress() {
-        //throw RuntimeException(getString(R.string.progress_no_available))
+        progress.show()
     }
 
     override fun hideProgress() {
-        //throw RuntimeException(getString(R.string.progress_no_available))
+        progress.hide()
     }
 
     override fun initializeUI() {
@@ -46,7 +48,7 @@ class MainActivity : RootActivity<GenreListPresenter.View>(), GenreListPresenter
     }
 
     override fun registerListeners() {
-        //genres.setOnClickListener {  }
+        // nothing to do
     }
 
     override fun onDestroy() {
@@ -55,12 +57,11 @@ class MainActivity : RootActivity<GenreListPresenter.View>(), GenreListPresenter
 
     override fun showGenreList(genreList: GenreListView) {
         genreListAdapter.addAll(genreList.genresList)
-        genres.adapter = genreListAdapter
     }
 
     override fun navigateToFilmsList(genreId: Int) {
         val intent = Intent(this, FilmsActivity::class.java)
-        intent.putExtra("genreId", genreId)
+        intent.putExtra(Constants.GENRE, genreId)
         startActivity(intent)
     }
 }

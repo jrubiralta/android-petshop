@@ -16,6 +16,7 @@ class FilmAdapter(var items: List<FilmView> = listOf(),
 
     fun addAll(filmsView: List<FilmView>) {
         this.items = filmsView
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): FilmViewHolder {

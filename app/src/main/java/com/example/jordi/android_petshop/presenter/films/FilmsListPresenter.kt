@@ -16,7 +16,9 @@ class FilmsListPresenter(private val getFilmsUseCase: GetFilmsUseCase,
 
     override fun initialize() {
         val genereId: Int = view.getGenreId()
-        getFilmsUseCase.execute(genreId = genereId, onSuccess = { filmsList ->  showFilmList(filmsList) },
+        getFilmsUseCase.execute(
+                genreId = genereId,
+                onSuccess = { filmsList ->  showFilmList(filmsList) },
                 onError = { showError(it as  Exception) })
     }
 
@@ -25,11 +27,10 @@ class FilmsListPresenter(private val getFilmsUseCase: GetFilmsUseCase,
     }
 
     override fun stop() {
-        getFilmsUseCase.clear()
     }
 
     override fun destroy() {
-
+        getFilmsUseCase.clear()
     }
 
     private fun showFilmList(filmsList: List<Film>) {
@@ -38,9 +39,7 @@ class FilmsListPresenter(private val getFilmsUseCase: GetFilmsUseCase,
     }
 
     private fun showError(exception: Exception) {
-        if (exception !is NoSuchElementException) {
-            view.showError(errorHandler.convert(exception))
-        }
+        onError { exception }
     }
 
     fun onFilmClicked(filmView: FilmView) {
