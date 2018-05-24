@@ -17,7 +17,8 @@ class GenreListPresenter(private val getGenreUseCase: GetGenreUseCase,
 
     override fun initialize() {
 
-        getGenreUseCase.execute(onSuccess = { genreList ->  showGenreList(genreList) },
+        getGenreUseCase.execute(
+                onSuccess = { genreList ->  showGenreList(genreList) },
                 onError = { showError(it as  Exception) })
     }
 
@@ -26,11 +27,10 @@ class GenreListPresenter(private val getGenreUseCase: GetGenreUseCase,
     }
 
     override fun stop() {
-        getGenreUseCase.clear()
     }
 
     override fun destroy() {
-
+        getGenreUseCase.clear()
     }
 
     private fun showGenreList(genreList: GenreList) {

@@ -6,7 +6,7 @@ import com.example.domain.repository.GenreRepository
 import io.reactivex.Single
 
 class GenreRepository(private val network: NetworkDataSource) : GenreRepository {
-    override fun getGenreList(api_key: String, language: String): Single<GenreList> {
-        return network.getGenreList(api_key, language)
+    override fun getGenreList(): Single<GenreList> {
+        return network.getGenreList()
     }
 }

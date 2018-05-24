@@ -1,7 +1,9 @@
 package com.example.jordi.android_petshop.presenter.films
 
+import android.support.v7.widget.Toolbar
 import com.example.domain.interactor.usecases.GetFilmsUseCase
 import com.example.domain.model.Film
+import com.example.jordi.android_petshop.R
 import com.example.jordi.android_petshop.exception.ErrorHandler
 import com.example.jordi.android_petshop.mapper.toView
 import com.example.jordi.android_petshop.model.FilmView
@@ -12,12 +14,13 @@ class FilmsListPresenter(private val getFilmsUseCase: GetFilmsUseCase,
                          view: FilmsListPresenter.View)
     : Presenter<FilmsListPresenter.View>(errorHandler, view) {
 
-
-
     override fun initialize() {
         val genereId: Int = view.getGenreId()
-        getFilmsUseCase.execute(genreId = genereId, onSuccess = { filmsList ->  showFilmList(filmsList) },
+        getFilmsUseCase.execute(
+                genreId = genereId,
+                onSuccess = { filmsList ->  showFilmList(filmsList) },
                 onError = { showError(it as  Exception) })
+
     }
 
     override fun resume() {
@@ -25,11 +28,10 @@ class FilmsListPresenter(private val getFilmsUseCase: GetFilmsUseCase,
     }
 
     override fun stop() {
-        getFilmsUseCase.clear()
     }
 
     override fun destroy() {
-
+        getFilmsUseCase.clear()
     }
 
     private fun showFilmList(filmsList: List<Film>) {
@@ -38,14 +40,17 @@ class FilmsListPresenter(private val getFilmsUseCase: GetFilmsUseCase,
     }
 
     private fun showError(exception: Exception) {
-        if (exception !is NoSuchElementException) {
-            view.showError(errorHandler.convert(exception))
-        }
+        onError { exception }
+    }
+
+    fun onFilmClicked(filmView: FilmView) {
+        view.navigateToFilmInfo(filmView)
     }
 
     interface View: Presenter.View {
         fun showFilmList(filmsList: List<FilmView>)
         fun getGenreId(): Int
+        fun navigateToFilmInfo(filmView: FilmView)
     }
 
 }

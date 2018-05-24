@@ -12,5 +12,11 @@ class Constants {
     companion object {
         val SERVER_TIMEOUT_SECONDS: Long = 120
 
+        val EMPTY_STRING = ""
+
+        const val GENRE = "genreId"
+
+        val API_KEY = "78c6f27b8b8c5e87706116266c146b9b"
+
     }
 }
