@@ -1,7 +1,9 @@
 package com.example.jordi.android_petshop.presenter.films
 
+import android.support.v7.widget.Toolbar
 import com.example.domain.interactor.usecases.GetFilmsUseCase
 import com.example.domain.model.Film
+import com.example.jordi.android_petshop.R
 import com.example.jordi.android_petshop.exception.ErrorHandler
 import com.example.jordi.android_petshop.mapper.toView
 import com.example.jordi.android_petshop.model.FilmView
@@ -12,14 +14,13 @@ class FilmsListPresenter(private val getFilmsUseCase: GetFilmsUseCase,
                          view: FilmsListPresenter.View)
     : Presenter<FilmsListPresenter.View>(errorHandler, view) {
 
-
-
     override fun initialize() {
         val genereId: Int = view.getGenreId()
         getFilmsUseCase.execute(
                 genreId = genereId,
                 onSuccess = { filmsList ->  showFilmList(filmsList) },
                 onError = { showError(it as  Exception) })
+
     }
 
     override fun resume() {
