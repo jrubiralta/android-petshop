@@ -1,6 +1,5 @@
 package com.example.jordi.android_petshop.presenter.genre
 
-import android.util.Log
 import com.example.domain.interactor.usecases.GetGenreUseCase
 import com.example.jordi.android_petshop.exception.ErrorHandler
 import com.example.domain.model.GenreList
@@ -45,11 +44,11 @@ class GenreListPresenter(private val getGenreUseCase: GetGenreUseCase,
     }
 
     fun onGenreClicked(genreView: GenreView) {
-        view.navigateToFilmsList(genreView.id)
+        view.navigateToFilmsList(genreView.id, genreView.name)
     }
 
     interface View: Presenter.View {
         fun showGenreList(genreListView: GenreListView)
-        fun navigateToFilmsList(genreId: Int)
+        fun navigateToFilmsList(genreId: Int, genreName: String)
     }
 }

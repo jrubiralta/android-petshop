@@ -20,14 +20,14 @@ class FilmsListPresenter(private val getFilmsUseCase: GetFilmsUseCase,
                 genreId = genereId,
                 onSuccess = { filmsList ->  showFilmList(filmsList) },
                 onError = { showError(it as  Exception) })
-
     }
 
     override fun resume() {
-
+        // nothing to do
     }
 
     override fun stop() {
+        // nothing to do
     }
 
     override fun destroy() {
@@ -50,6 +50,7 @@ class FilmsListPresenter(private val getFilmsUseCase: GetFilmsUseCase,
     interface View: Presenter.View {
         fun showFilmList(filmsList: List<FilmView>)
         fun getGenreId(): Int
+        fun getGenreName(): String
         fun navigateToFilmInfo(filmView: FilmView)
     }
 
