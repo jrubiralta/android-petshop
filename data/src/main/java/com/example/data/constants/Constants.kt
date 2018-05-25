@@ -15,6 +15,7 @@ class Constants {
         val EMPTY_STRING = ""
 
         const val GENRE = "genreId"
+        const val GENRE_NAME = "genreName"
 
         val API_KEY = "78c6f27b8b8c5e87706116266c146b9b"
 

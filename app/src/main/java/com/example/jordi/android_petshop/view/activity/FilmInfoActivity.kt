@@ -1,6 +1,9 @@
 package com.example.jordi.android_petshop.view.activity
 
+import android.content.Intent
 import android.os.Bundle
+import android.support.v4.app.NavUtils.navigateUpFromSameTask
+import android.view.MenuItem
 import com.github.salomonbrys.kodein.Kodein
 import com.github.salomonbrys.kodein.bind
 import com.github.salomonbrys.kodein.instance
@@ -8,6 +11,7 @@ import com.github.salomonbrys.kodein.provider
 import com.example.jordi.android_petshop.R
 import com.example.jordi.android_petshop.extensions.load
 import com.example.jordi.android_petshop.presenter.films.FilmPresenter
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.film_information.*
 import kotlinx.android.synthetic.main.view_progress.*
 
@@ -21,6 +25,14 @@ class FilmInfoActivity : RootActivity<FilmPresenter.View>(), FilmPresenter.View 
                     view = this@FilmInfoActivity)
         }
     }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setSupportActionBar(filmInfoToolbar)
+        supportActionBar?.title = getFilmTitle()
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
 
     override val presenter: FilmPresenter by instance()
 
@@ -46,6 +58,27 @@ class FilmInfoActivity : RootActivity<FilmPresenter.View>(), FilmPresenter.View 
 
     override fun onDestroy() {
         super.onDestroy()
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return false
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id: Int = item.itemId
+
+        if (id == android.R.id.home) {
+            onBackPressed()
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
+    override fun getFilmTitle(): String {
+        val i: Bundle = intent.extras
+        val filmTitle = i.getString("title")
+        return filmTitle
     }
 
     override fun getFilmDetails() {

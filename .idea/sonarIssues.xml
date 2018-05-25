@@ -3,7 +3,7 @@
   <component name="issues">
     <option name="index">
       <map>
-        <entry key="/Dummy.txt">
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/jordi/android_petshop/view/activity/FilmInfoActivity.kt">
           <value>
             <set />
           </value>

@@ -31,6 +31,7 @@ class FilmPresenter(errorHandler: ErrorHandler,
     }
 
     interface View: Presenter.View {
+        fun getFilmTitle(): String
         fun getFilmDetails()
     }
 

@@ -1,6 +1,7 @@
 package com.example.jordi.android_petshop.view.activity
 
 import android.content.Intent
+import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import com.example.data.constants.Constants
 import com.github.salomonbrys.kodein.Kodein
@@ -24,6 +25,12 @@ class MainActivity : RootActivity<GenreListPresenter.View>(), GenreListPresenter
                     errorHandler = instance(),
                     view = this@MainActivity)
         }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setTitle("Géneros")
     }
 
     override val presenter: GenreListPresenter by instance()
@@ -59,9 +66,10 @@ class MainActivity : RootActivity<GenreListPresenter.View>(), GenreListPresenter
         genreListAdapter.addAll(genreList.genresList)
     }
 
-    override fun navigateToFilmsList(genreId: Int) {
+    override fun navigateToFilmsList(genreId: Int, genreName: String) {
         val intent = Intent(this, FilmsActivity::class.java)
         intent.putExtra(Constants.GENRE, genreId)
+        intent.putExtra(Constants.GENRE_NAME, genreName)
         startActivity(intent)
     }
 }

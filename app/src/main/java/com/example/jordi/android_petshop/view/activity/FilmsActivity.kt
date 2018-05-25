@@ -2,7 +2,10 @@ package com.example.jordi.android_petshop.view.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.Toolbar
+import android.view.MenuItem
 import com.example.data.constants.Constants
 import com.github.salomonbrys.kodein.Kodein
 import com.github.salomonbrys.kodein.bind
@@ -12,6 +15,7 @@ import com.example.jordi.android_petshop.R
 import com.example.jordi.android_petshop.model.FilmView
 import com.example.jordi.android_petshop.presenter.films.FilmsListPresenter
 import com.example.jordi.android_petshop.view.adapter.FilmAdapter
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.list_films.*
 import kotlinx.android.synthetic.main.view_progress.*
 
@@ -24,6 +28,13 @@ class FilmsActivity : RootActivity<FilmsListPresenter.View>(), FilmsListPresente
                     errorHandler = instance(),
                     view = this@FilmsActivity)
         }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setSupportActionBar(filmsToolbar)
+        supportActionBar?.title = getGenreName()
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     override val presenter: FilmsListPresenter by instance()
@@ -55,6 +66,21 @@ class FilmsActivity : RootActivity<FilmsListPresenter.View>(), FilmsListPresente
         super.onDestroy()
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id: Int = item.itemId
+
+        if (id == android.R.id.home) {
+            this.finish()
+            onBackPressed()
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
     override fun showFilmList(filmsList: List<FilmView>) {
         filmListAdapter.addAll(filmsList)
     }
@@ -63,6 +89,12 @@ class FilmsActivity : RootActivity<FilmsListPresenter.View>(), FilmsListPresente
         val i: Bundle = intent.extras
         val genereId: Int = i.getInt(Constants.GENRE)
         return genereId
+    }
+
+    override fun getGenreName(): String {
+        val i: Bundle = intent.extras
+        val genereName: String = i.getString(Constants.GENRE_NAME)
+        return genereName
     }
 
     override fun navigateToFilmInfo(filmView: FilmView) {
