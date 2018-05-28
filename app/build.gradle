@@ -45,6 +45,9 @@ dependencies {
     testImplementation appTestDependencies.jUnit
     testImplementation appTestDependencies.mockito
 
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+
     androidTestImplementation appTestDependencies.mockitoAndroid
     androidTestImplementation appTestDependencies.espresso
     androidTestImplementation appTestDependencies.espressoCore
