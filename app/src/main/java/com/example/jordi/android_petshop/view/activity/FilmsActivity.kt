@@ -18,8 +18,17 @@ import com.example.jordi.android_petshop.view.adapter.FilmAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.list_films.*
 import kotlinx.android.synthetic.main.view_progress.*
+import java.net.URL
 
 class FilmsActivity : RootActivity<FilmsListPresenter.View>(), FilmsListPresenter.View {
+
+    companion object {
+        const val TITLE = "title"
+        const val DATA = "release_data"
+        const val OVERVIEW = "overview"
+        const val VOTE_AVERAGE = "vote_average"
+        const val IMAGE_URL = "url"
+    }
 
     override val activityModule: Kodein.Module = Kodein.Module {
         bind<FilmsListPresenter>() with provider {
@@ -99,11 +108,11 @@ class FilmsActivity : RootActivity<FilmsListPresenter.View>(), FilmsListPresente
 
     override fun navigateToFilmInfo(filmView: FilmView) {
         val intent = Intent(this, FilmInfoActivity::class.java)
-        intent.putExtra("overview", filmView.overview)
-        intent.putExtra("release_data", filmView.release_date)
-        intent.putExtra("vote_average", filmView.vote_average)
-        intent.putExtra("image_url", filmView.getImage())
-        intent.putExtra("title", filmView.title)
+        intent.putExtra(OVERVIEW, filmView.overview)
+        intent.putExtra(DATA, filmView.release_date)
+        intent.putExtra(VOTE_AVERAGE, filmView.vote_average)
+        intent.putExtra(IMAGE_URL, filmView.getImage())
+        intent.putExtra(TITLE, filmView.title)
         startActivity(intent)
     }
 }

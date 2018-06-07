@@ -30,7 +30,7 @@ class MainActivity : RootActivity<GenreListPresenter.View>(), GenreListPresenter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setSupportActionBar(toolbar)
-        supportActionBar?.setTitle("Géneros")
+        supportActionBar?.setTitle(R.string.generos_title)
     }
 
     override val presenter: GenreListPresenter by instance()

@@ -18,6 +18,14 @@ import kotlinx.android.synthetic.main.view_progress.*
 
 class FilmInfoActivity : RootActivity<FilmPresenter.View>(), FilmPresenter.View {
 
+    companion object {
+        const val TITLE = "title"
+        const val DATA = "release_data"
+        const val OVERVIEW = "overview"
+        const val VOTE_AVERAGE = "vote_average"
+        const val IMAGE_URL = "url"
+    }
+
     override val activityModule: Kodein.Module = Kodein.Module {
         bind<FilmPresenter>() with provider {
             FilmPresenter(
@@ -77,16 +85,16 @@ class FilmInfoActivity : RootActivity<FilmPresenter.View>(), FilmPresenter.View 
 
     override fun getFilmTitle(): String {
         val i: Bundle = intent.extras
-        val filmTitle = i.getString("title")
+        val filmTitle = i.getString(TITLE)
         return filmTitle
     }
 
     override fun getFilmDetails() {
         val i: Bundle = intent.extras
-        titleFilm.text = i.getString("title")
-        date.text = i.getString("release_data")
-        overview.text = i.getString("overview")
-        average.text = i.getDouble("vote_average").toString()
-        image.load(i.getString("image_url"))
+        titleFilm.text = i.getString(TITLE)
+        date.text = i.getString(DATA)
+        overview.text = i.getString(OVERVIEW)
+        average.text = i.getDouble(VOTE_AVERAGE).toString()
+        image.load(i.getString(IMAGE_URL))
     }
 }
